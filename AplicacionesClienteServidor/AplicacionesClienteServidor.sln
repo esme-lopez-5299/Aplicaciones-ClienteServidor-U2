@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contadores", "Contadores\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteHTTP", "ClienteHTTP\ClienteHTTP.csproj", "{02DE3A41-2CEC-4933-85D0-E8A63CA70A48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U2Actividad3-TableroDeportivo", "U2Actividad3-TableroDeportivo\U2Actividad3-TableroDeportivo.csproj", "{E251F622-4BA4-46E8-AC14-5790C585877C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{02DE3A41-2CEC-4933-85D0-E8A63CA70A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02DE3A41-2CEC-4933-85D0-E8A63CA70A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02DE3A41-2CEC-4933-85D0-E8A63CA70A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E251F622-4BA4-46E8-AC14-5790C585877C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E251F622-4BA4-46E8-AC14-5790C585877C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E251F622-4BA4-46E8-AC14-5790C585877C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E251F622-4BA4-46E8-AC14-5790C585877C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

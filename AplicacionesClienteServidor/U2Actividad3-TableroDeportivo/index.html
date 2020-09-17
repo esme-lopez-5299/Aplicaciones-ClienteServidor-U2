@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Actividad Tablero deportivo</title>
+    <!--<link href="~/estilos.css" rel="stylesheet" />-->
+    <style>
+        html{
+            background-color:whitesmoke;
+        }
+
+        body{
+            margin:auto;
+            width:40%;
+            background-color:  white;
+        }
+
+        h1, h2, h4{
+            margin-bottom:10px;
+            font-family:Arial;
+            text-align:center;
+        }
+
+        form label{
+           font-family:Arial;
+           font-size:15px;
+        }
+        
+        .submit{
+            background-color:white;
+            font-weight:lighter;
+            color:black;
+            border:.5px solid forestgreen;            
+            margin-bottom:5px;
+            font-size:14px;
+        }
+
+        .dato-equipo{
+            margin-top:5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Tablero deportivo</h1>
+    <h2>Desarrollo de aplicaciones cliente servidor</h2>
+    <h4>Esmeralda Lopez Muñoz</h4>
+
+    <form method="post" action="/actividad3/">
+        <fieldset>
+            <legend>Partido deportivo</legend>
+
+
+
+            <label>Nombre equipo local:</label> <input name="equipo1" /> <br />
+            <label class="dato-equipo">Nombre equipo invitado:</label> <input  class="dato-equipo" name="equipo2" /> <br />
+            <input type="submit" class="submit" value="Enviar nombres" /><br /><br />
+
+
+
+            <label>Tiempo:</label>
+            <input type="submit" class="submit" name="tiempo" value="1° Tiempo" />
+            <input type="submit" class="submit" name="tiempo" value="2° Tiempo" />
+            <input type="submit" class="submit" name="tiempo" value="Tiempo Extra" /><br /><br />
+
+            <label>Marcador equipo 1:</label> <input class="submit" name="golesequipo1" type="submit" value="sumar" /> <input class="submit" name="golesequipo1" type="submit" value="restar" /><br />
+            <label>Marcador equipo 2:</label> <input class="submit" name="golesequipo2" type="submit" value="sumar" /> <input class="submit" name="golesequipo2" type="submit" value="restar" /><br /><br />
+
+
+            <label>Cronómetro:</label>
+            <input type="submit" class="submit" name="iniciar" value="Iniciar partido" /> <input class="submit" type="submit" name="detener" value="Detener partido" />
+        </fieldset>
+    </form>
+</body>
+</html>

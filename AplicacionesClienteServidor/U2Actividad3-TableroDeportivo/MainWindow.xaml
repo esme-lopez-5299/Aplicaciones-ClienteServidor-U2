@@ -1,0 +1,70 @@
+﻿<Window x:Class="U2Actividad3_TableroDeportivo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:U2Actividad3_TableroDeportivo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="600" >
+    <Window.Background>
+        <ImageBrush ImageSource="cancha.jpg" Opacity=".6"></ImageBrush>
+    </Window.Background>
+    <StackPanel>
+        <TextBlock FontFamily="DS-DIGITAL" Background="Black" FontSize="35" Foreground="White"  TextAlignment="Center" Margin="0,20,-0.4,0" Width="594" VerticalAlignment="Center" >Partido amistoso</TextBlock>
+        <Grid Margin="30" >
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Background" Value="Black"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <Setter Property="TextAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="25"></Setter>
+                    <Setter Property="FontFamily" Value="DS-Digital"></Setter>
+                </Style>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="10,10,10,30"></Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <TextBlock>Local</TextBlock>
+                <TextBlock Text="{Binding Equipo1}"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Background="ForestGreen">Tiempo</TextBlock>
+                <TextBlock Background="ForestGreen" Text="{Binding Cronometro}" ></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <TextBlock>Invitado</TextBlock>
+                <TextBlock Text="{Binding Equipo2}"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <TextBlock>Goles</TextBlock>
+                <TextBlock Text="{Binding Golesequipo1}"  ></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="2" >
+                <TextBlock>Goles</TextBlock>
+                <TextBlock Text="{Binding Golesequipo2}" ></TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock  Background="ForestGreen">Momento</TextBlock>
+                <TextBlock Background="ForestGreen" Text="{Binding Tiempo}" ></TextBlock>
+            </StackPanel>
+
+
+        </Grid>
+    </StackPanel>
+
+</Window>
