@@ -1,0 +1,23 @@
+﻿<Window x:Class="ClienteAlumnos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClienteAlumnos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <UniformGrid Columns="2">
+        <StackPanel>
+            <Label>Número de control:</Label>
+            <TextBox Text="{Binding NumeroControl}"></TextBox>
+            <Label>Nombre:</Label>
+            <TextBox Text="{Binding Nombre}"></TextBox>
+            <Label>Carrera:</Label>
+            <TextBox Text="{Binding Carrera}"></TextBox>
+            <Button Content="Agregar" Click="Button_Click"></Button>
+            <Button Name="btnEditar" Click="btnEditar_Click">Editar</Button>
+            <Button Name="btnEliminar" Click="btnEliminar_Click">Eliminar</Button>
+           
+        </StackPanel> 
+    </UniformGrid>
+</Window>

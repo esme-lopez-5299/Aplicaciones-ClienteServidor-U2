@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace U2Actividad3_TableroDeportivo
@@ -123,7 +124,7 @@ namespace U2Actividad3_TableroDeportivo
                 ModificarCronometro(datos["iniciar"], datos["detener"]);
                 contexto.Response.StatusCode = 200;
                 contexto.Response.Redirect("/actividad3");
-            }
+            }            
             else
             {
                 contexto.Response.StatusCode = 404;
