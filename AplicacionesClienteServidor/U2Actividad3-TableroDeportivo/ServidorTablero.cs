@@ -117,13 +117,21 @@ namespace U2Actividad3_TableroDeportivo
                 StreamReader stream = new StreamReader(contexto.Request.InputStream);
                 string variables = stream.ReadToEnd();
                 var datos = HttpUtility.ParseQueryString(variables);
-                ModificarE1(datos["equipo1"]);
+                if(datos["equipo1"]=="" && datos["equipo2"]=="" && datos["tiempo"]==null && datos["golesequipo1"]==null && datos["golesequipo2"] == null && datos["iniciar"] == null && datos["detener"] == null)
+                {
+                    contexto.Response.StatusCode = 400;
+                }
+                else
+                {
+       ModificarE1(datos["equipo1"]);
                 ModificarE2(datos["equipo2"]);
                 ModificarTiempo(datos["tiempo"]);
                 ModificarGoles(datos["golesequipo1"], datos["golesequipo2"]);
                 ModificarCronometro(datos["iniciar"], datos["detener"]);
                 contexto.Response.StatusCode = 200;
                 contexto.Response.Redirect("/actividad3");
+                }
+               
             }            
             else
             {
