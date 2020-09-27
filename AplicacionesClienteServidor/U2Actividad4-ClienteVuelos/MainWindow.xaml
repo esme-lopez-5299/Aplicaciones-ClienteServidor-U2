@@ -1,0 +1,61 @@
+﻿<Window x:Class="U2Actividad4_ClienteVuelos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:U2Actividad4_ClienteVuelos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <StackPanel>
+            <TextBlock FontSize="25" TextAlignment="Center" Margin="10" FontFamily="Dubai Medium">Viva Aerobus</TextBlock>
+
+            <UniformGrid Columns="2" Rows="2">
+                <Grid Margin="50,0,0,0">
+                    <Grid.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontFamily" Value="Dubai Medium"></Setter>
+                            <Setter Property="Margin" Value="0,0,0,5"></Setter>
+                        </Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="FontFamily" Value="Dubai Medium"></Setter>
+                            <Setter Property="Margin" Value="0,0,0,5"></Setter>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" Grid.ColumnSpan="2">Registro de vuelo</TextBlock>
+                    <TextBlock Grid.Row="1">Hora</TextBlock>
+                    <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Hora}"></TextBox>
+                    <TextBlock Grid.Row="2">Destino</TextBlock>
+                    <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Destino}"></TextBox>
+                    <TextBlock Grid.Row="3">Vuelo</TextBlock>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Vuelo}"></TextBox>
+                    <TextBlock Grid.Row="4" >Estado</TextBlock>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Estado}"></TextBox>
+                    <Button Margin="50,0,50,0" Grid.Row="6" Grid.ColumnSpan="2" x:Name="btnAgregar" Click="btnAgregar_Click">Agregar</Button>
+                </Grid>
+                <WrapPanel>
+                    <DataGrid  Name="dtgListaVuelos"></DataGrid>
+                    <StackPanel Margin="20,0,0,0">
+                        <Button x:Name="btnEditar" Click="btnEditar_Click">Editar</Button>
+                        <Button Name="btnEliminar" Click="btnEliminar_Click">Eliminar</Button>
+                        <Button Name="btnActualizar" Click="btnActualizar_Click">Actualizar</Button>
+                    </StackPanel>
+                </WrapPanel>
+            </UniformGrid>
+
+          
+        </StackPanel>
+    </DockPanel>
+</Window>
