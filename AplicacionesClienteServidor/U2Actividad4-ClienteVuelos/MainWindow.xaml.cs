@@ -24,33 +24,36 @@ namespace U2Actividad4_ClienteVuelos
         ClienteVuelos cliente = new ClienteVuelos();
 
         DatosVuelo datos = new DatosVuelo();
-
         private int time = 0;
         private DispatcherTimer Timer;
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = datos;
-            cliente.Get();
+             cliente.Get();
+            cliente.AlHaberMovimiento += Cliente_AlHaberMovimiento;
 
-            dtgListaVuelos.ItemsSource = cliente.Model;
-
-            //Instanciaciones para un timespan
             Timer = new DispatcherTimer();
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Tick += Timer_Tick;
+            Timer.Interval = new TimeSpan(0, 0, 5);
+            Timer.Tick += Timer_Tick; ;
             Timer.Start();
+
 
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if(time>=0)
+            if (time >= 0)
             {
-                
-                dtgListaVuelos.ItemsSource = cliente.Model;
+
+                cliente.Get();
                 time++;
             }
+        }
+
+        private void Cliente_AlHaberMovimiento()
+        {
+            dtgListaVuelos.ItemsSource = cliente.Model;
         }
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
@@ -59,7 +62,7 @@ namespace U2Actividad4_ClienteVuelos
             {
                 
                 cliente.Agregar(datos);
-                cliente.Get();
+                //cliente.Get();
             }
             catch (Exception ex)
             {
@@ -74,7 +77,7 @@ namespace U2Actividad4_ClienteVuelos
             {
                 
                 cliente.Editar(datos);
-                cliente.Get();
+               //cliente.Get();
             }
             catch (Exception ex)
             {
@@ -90,7 +93,7 @@ namespace U2Actividad4_ClienteVuelos
             {
                 
                 cliente.Eliminar(datos);
-                cliente.Get();
+               //cliente.Get();
             }
             catch (Exception ex)
             {
@@ -99,17 +102,17 @@ namespace U2Actividad4_ClienteVuelos
             }
         }
 
-        private void btnActualizar_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                dtgListaVuelos.ItemsSource = cliente.Model;
-            }
-            catch (Exception ex)
-            {
+        //private void btnActualizar_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        //dtgListaVuelos.ItemsSource = cliente.Model;
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
     }
 }

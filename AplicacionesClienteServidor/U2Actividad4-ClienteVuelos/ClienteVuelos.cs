@@ -11,14 +11,11 @@ using System.Windows.Documents;
 
 namespace U2Actividad4_ClienteVuelos
 {
-    public class ClienteVuelos:INotifyPropertyChanged
+    public class ClienteVuelos
     {
-
-        private void LanzarEvento(string propiedad)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propiedad));
-        }
-
+        public delegate void movimiento();
+        public event movimiento AlHaberMovimiento;
+        
         HttpClient cliente = new HttpClient();
 
         public ClienteVuelos()
@@ -30,6 +27,7 @@ namespace U2Actividad4_ClienteVuelos
 
         public async void Agregar(DatosVuelo v)
         {
+            
             var json = JsonConvert.SerializeObject(v);
             var result = await cliente.PostAsync("/Tablero", new StringContent(json, Encoding.UTF8, "application/json"));
             result.EnsureSuccessStatusCode();
@@ -52,15 +50,10 @@ namespace U2Actividad4_ClienteVuelos
             result.EnsureSuccessStatusCode();
         }
 
+              
 
-        
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-      
-
-        public List<DatosVuelo> Model { get; set; }
-
+        public IEnumerable<DatosVuelo> Model { get; set; }
 
         public async void Get()
         {
@@ -73,9 +66,8 @@ namespace U2Actividad4_ClienteVuelos
             if (response.IsSuccessStatusCode)
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
-                Model = JsonConvert.DeserializeObject<List<DatosVuelo>>(jsonString);
-
-                LanzarEvento("Model");                
+                 Model = JsonConvert.DeserializeObject<IEnumerable<DatosVuelo>>(jsonString);
+                AlHaberMovimiento?.Invoke();
             }            
         }
     }

@@ -42,15 +42,20 @@
                     <TextBlock Grid.Row="3">Vuelo</TextBlock>
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Vuelo}"></TextBox>
                     <TextBlock Grid.Row="4" >Estado</TextBlock>
-                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Estado}"></TextBox>
+                    <ComboBox Grid.Row="4" Grid.Column="1" Text="{Binding Estado}">
+                        <ComboBoxItem>A tiempo</ComboBoxItem>
+                        <ComboBoxItem>Abordando</ComboBoxItem>
+                        <ComboBoxItem>Retrasado</ComboBoxItem>
+                        <ComboBoxItem>Cancelado</ComboBoxItem>
+                    </ComboBox>
                     <Button Margin="50,0,50,0" Grid.Row="6" Grid.ColumnSpan="2" x:Name="btnAgregar" Click="btnAgregar_Click">Agregar</Button>
                 </Grid>
-                <WrapPanel>
-                    <DataGrid  Name="dtgListaVuelos"></DataGrid>
+                <WrapPanel Margin="30,30,0,0">
+                    <DataGrid IsReadOnly="True" SelectedItem="{Binding Path=datos}" Name="dtgListaVuelos"></DataGrid>
                     <StackPanel Margin="20,0,0,0">
                         <Button x:Name="btnEditar" Click="btnEditar_Click">Editar</Button>
                         <Button Name="btnEliminar" Click="btnEliminar_Click">Eliminar</Button>
-                        <Button Name="btnActualizar" Click="btnActualizar_Click">Actualizar</Button>
+                      
                     </StackPanel>
                 </WrapPanel>
             </UniformGrid>
