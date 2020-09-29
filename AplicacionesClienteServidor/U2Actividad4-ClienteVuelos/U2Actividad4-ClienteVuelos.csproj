@@ -101,5 +101,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\vivaaerobus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\ventanilla-avion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\fondo-blanco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\vivaaerobus-avion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\VivaAerobus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\vaa.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
