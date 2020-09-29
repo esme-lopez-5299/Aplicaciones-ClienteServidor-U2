@@ -25,17 +25,16 @@ namespace U2Actividad4_ClienteVuelos
         ClienteVuelos cliente = new ClienteVuelos();
 
         DatosVuelo datos = new DatosVuelo();
-        DatosVuelo datos3 = new DatosVuelo();
+        
         DatosVuelo datos2 = new DatosVuelo();
         private int time = 0;
         private DispatcherTimer Timer;
         public MainWindow()
         {
             InitializeComponent();
-          //  this.DataContext = datos;
+          
             cliente.Get();
-            cliente.AlHaberMovimiento += Cliente_AlHaberMovimiento;
-          //  this.DataContext = datos;
+            cliente.AlHaberMovimiento += Cliente_AlHaberMovimiento;          
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 5);
             Timer.Tick += Timer_Tick; ;
@@ -84,14 +83,16 @@ namespace U2Actividad4_ClienteVuelos
         {
             try 
             {
-                datos3.Hora = txtHora.Text;
-                datos3.Vuelo = txtVuelo.Text;
-                datos3.Destino = txtDestino.Text;
-                datos3.Estado = cmbEstado.Text;
+
+                //Datos 3
+                datos.Hora = txtHora.Text;
+                datos.Vuelo = txtVuelo.Text;
+                datos.Destino = txtDestino.Text;
+                datos.Estado = cmbEstado.Text;
 
 
 
-                cliente.Editar(datos3);
+                cliente.Editar(datos);
                 cliente.Get();
                 Timer.Start();
             }
@@ -146,11 +147,6 @@ namespace U2Actividad4_ClienteVuelos
             }
 
         }
-
-        //private void btnSeleccionar_Click(object sender, RoutedEventArgs e)
-        //{
-           
-           
-        //}
+        
     }
 }

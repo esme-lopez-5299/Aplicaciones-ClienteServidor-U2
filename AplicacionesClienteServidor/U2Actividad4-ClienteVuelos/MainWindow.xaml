@@ -59,7 +59,7 @@
                 <TextBlock Grid.Row="3">Vuelo:</TextBlock>
                 <TextBox x:Name="txtVuelo" Grid.Row="3" Grid.Column="1" Text="{Binding Vuelo}"></TextBox>
                 <TextBlock Grid.Row="4" >Estado:</TextBlock>
-                <ComboBox Height="30" x:Name="cmbEstado" Grid.Row="4" Grid.Column="1">
+                <ComboBox Height="30" x:Name="cmbEstado" Text="{Binding Estado}" Grid.Row="4" Grid.Column="1">
                     <ComboBoxItem>A TIEMPO</ComboBoxItem>
                     <ComboBoxItem>ABORDANDO</ComboBoxItem>
                     <ComboBoxItem>RETRASADO</ComboBoxItem>
