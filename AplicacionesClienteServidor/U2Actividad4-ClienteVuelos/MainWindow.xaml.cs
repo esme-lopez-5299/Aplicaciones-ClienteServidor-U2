@@ -89,6 +89,8 @@ namespace U2Actividad4_ClienteVuelos
                 datos3.Destino = txtDestino.Text;
                 datos3.Estado = cmbEstado.Text;
 
+
+
                 cliente.Editar(datos3);
                 cliente.Get();
                 Timer.Start();
@@ -138,13 +140,13 @@ namespace U2Actividad4_ClienteVuelos
             {
  Timer.Stop();            
             datos = dtgListaVuelos.SelectedItem as DatosVuelo;
-            txtHora.Text = datos.Hora;
-            txtDestino.Text = datos.Destino;
-            txtVuelo.Text = datos.Vuelo;
-            cmbEstado.SelectedItem = datos.Estado;
+                txtHora.Text = datos.Hora;
+                txtDestino.Text = datos.Destino;
+                txtVuelo.Text = datos.Vuelo;
+                cmbEstado.SelectedItem = datos.Estado;
 
             }
-           
+
         }
 
         //private void btnSeleccionar_Click(object sender, RoutedEventArgs e)

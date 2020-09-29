@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:U2Actividad4_ClienteVuelos"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="850">
+        Title="MainWindow" Height="400" Width="900">
     <Window.Background >
         <ImageBrush  ImageSource="/images/vaa.jpg">
             
@@ -14,9 +14,6 @@
     <StackPanel>
 
         <WrapPanel Background="White" DockPanel.Dock="Top">
-            <!--<WrapPanel.Background>
-                <ImageBrush ImageSource="/images/fondo-blanco.jpg" Opacity=".6"></ImageBrush>
-            </WrapPanel.Background>-->
             <Image Margin="80,20,0,30"  Source="images/vivaaerobus.png" Width="80"></Image>
             <TextBlock Margin="80,20,0,30" FontSize="25" TextAlignment="Center" FontFamily="Dubai Medium">Viva Aerobus: Lo que necesitas para volar</TextBlock>
         </WrapPanel>
@@ -62,19 +59,19 @@
                 <TextBlock Grid.Row="3">Vuelo:</TextBlock>
                 <TextBox x:Name="txtVuelo" Grid.Row="3" Grid.Column="1" Text="{Binding Vuelo}"></TextBox>
                 <TextBlock Grid.Row="4" >Estado:</TextBlock>
-                <ComboBox Height="30" x:Name="cmbEstado" Grid.Row="4" Grid.Column="1" Text="{Binding Estado}">
+                <ComboBox Height="30" x:Name="cmbEstado" Grid.Row="4" Grid.Column="1">
                     <ComboBoxItem>A tiempo</ComboBoxItem>
                     <ComboBoxItem>Abordando</ComboBoxItem>
                     <ComboBoxItem>Retrasado</ComboBoxItem>
                     <ComboBoxItem>Cancelado</ComboBoxItem>
                 </ComboBox>
             </Grid>
-            <DataGrid Margin="30,30,0,0" IsReadOnly="True" AutoGenerateColumns="False" Height="150" Name="dtgListaVuelos" SelectionChanged="dtgListaVuelos_SelectionChanged">
+            <DataGrid Margin="0,30,0,0" IsReadOnly="True" AutoGenerateColumns="False" Width="360" Height="150" Name="dtgListaVuelos" SelectionChanged="dtgListaVuelos_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Hora"  Binding="{Binding Hora}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Destino" Binding="{Binding Destino}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Vuelo" Binding="{Binding Vuelo}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Hora" Width="60" Binding="{Binding Hora}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Destino" Width="120"  Binding="{Binding Destino}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Vuelo" Width="50"  Binding="{Binding Vuelo}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Estado" Width="100"  Binding="{Binding Estado}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </UniformGrid>
@@ -94,7 +91,6 @@
             <Button x:Name="btnAgregar" Click="btnAgregar_Click" >Agregar</Button>
             <Button x:Name="btnEditar" Click="btnEditar_Click">Editar</Button>
             <Button Name="btnEliminar" Click="btnEliminar_Click">Eliminar</Button>
-            <!--<Button x:Name="btnSeleccionar" Click="btnSeleccionar_Click">Seleccionar</Button>-->
         </WrapPanel>
 
 
