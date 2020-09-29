@@ -97,9 +97,7 @@ namespace U2Actividad4_ClienteVuelos
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-
             }
         }
 
@@ -143,7 +141,7 @@ namespace U2Actividad4_ClienteVuelos
                 txtHora.Text = datos.Hora;
                 txtDestino.Text = datos.Destino;
                 txtVuelo.Text = datos.Vuelo;
-                cmbEstado.SelectedItem = datos.Estado;
+                cmbEstado.Text= datos.Estado;
 
             }
 

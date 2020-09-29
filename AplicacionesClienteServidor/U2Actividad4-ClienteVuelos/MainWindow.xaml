@@ -60,10 +60,10 @@
                 <TextBox x:Name="txtVuelo" Grid.Row="3" Grid.Column="1" Text="{Binding Vuelo}"></TextBox>
                 <TextBlock Grid.Row="4" >Estado:</TextBlock>
                 <ComboBox Height="30" x:Name="cmbEstado" Grid.Row="4" Grid.Column="1">
-                    <ComboBoxItem>A tiempo</ComboBoxItem>
-                    <ComboBoxItem>Abordando</ComboBoxItem>
-                    <ComboBoxItem>Retrasado</ComboBoxItem>
-                    <ComboBoxItem>Cancelado</ComboBoxItem>
+                    <ComboBoxItem>A TIEMPO</ComboBoxItem>
+                    <ComboBoxItem>ABORDANDO</ComboBoxItem>
+                    <ComboBoxItem>RETRASADO</ComboBoxItem>
+                    <ComboBoxItem>CANCELADO</ComboBoxItem>
                 </ComboBox>
             </Grid>
             <DataGrid Margin="0,30,0,0" IsReadOnly="True" AutoGenerateColumns="False" Width="360" Height="150" Name="dtgListaVuelos" SelectionChanged="dtgListaVuelos_SelectionChanged">
